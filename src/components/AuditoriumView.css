@@ -1,0 +1,25 @@
+.auditorium {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seat.chosen {
+  background-color: #3498db;
+  color: white;
+}
