@@ -1,0 +1,88 @@
+.review-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(to bottom, #1e0033, #000010);
+  color: white;
+  border-radius: 12px;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.input-grid input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.rating {
+  margin: 20px 0 10px;
+}
+
+.stars {
+  display: flex;
+  font-size: 30px;
+}
+
+.star {
+  cursor: pointer;
+  color: gray;
+}
+
+.star.filled {
+  color: gold;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  resize: none;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.suggestion-btn {
+  padding: 8px 12px;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.suggestion-btn.active {
+  background: #ff3399;
+  color: white;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  background: #ff0044;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}

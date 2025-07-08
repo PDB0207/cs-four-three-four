@@ -1,0 +1,52 @@
+/* UserProfile.css */
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+img.rounded-circle {
+  border: 3px solid #0d6efd;
+  transition: transform 0.3s ease;
+}
+
+img.rounded-circle:hover {
+  transform: scale(1.05);
+}
+
+.list-group-item {
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+button.btn-light {
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+button.btn-light:hover {
+  background-color: #e2e6ea;
+}
+
+.modal-body img {
+  border: 3px solid #0d6efd;
+  margin-bottom: 1rem;
+}
+
+/* Responsive chỉnh avatar trong modal */
+@media (max-width: 576px) {
+  .modal-body img {
+    width: 80px !important;
+  }
+}

@@ -1,3 +1,4 @@
+ HEAD
 # Bỏ qua các tệp sao lưu, cache, và nhạy cảm
 *.log
 *.tmp
@@ -15,3 +16,29 @@ Thumbs.db
 # Các tệp hệ thống từ IDE/Windows
 .vscode/
 *.~*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+51df2ca24c5d0c5e3cb527ffdd23f0bf23ab440d
