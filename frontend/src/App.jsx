@@ -4,16 +4,18 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import BookingPage from './pages/BookingPage';
 import ReportPage from './pages/ReportPage';
-cd
+import MovieReview from './pages/MovieReview'; // ← thêm dòng này
+
 function App() {
   return (
-     <Router>
+    <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/report" element={<ReportPage />} />
+        <Route path="/review" element={<MovieReview />} /> {/* ← thêm dòng này */}
       </Routes>
     </Router>
   );
