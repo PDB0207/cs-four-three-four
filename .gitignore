@@ -1,0 +1,17 @@
+# Bỏ qua các tệp sao lưu, cache, và nhạy cảm
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Thư mục riêng tư hoặc hệ thống
+vendor/
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+
+# Các tệp hệ thống từ IDE/Windows
+.vscode/
+*.~*
