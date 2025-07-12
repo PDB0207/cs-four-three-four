@@ -15,9 +15,14 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
+<<<<<<< Updated upstream
     "express": "^5.1.0"
   },
   "devDependencies": {
     "node-fetch": "^2.6.7"
+=======
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+>>>>>>> Stashed changes
   }
 }
