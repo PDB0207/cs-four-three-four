@@ -6,6 +6,8 @@ import BookingPage from './pages/BookingPage';
 import ReportPage from './pages/ReportPage';
 import MovieReview from './pages/MovieReview'; 
 import UserProfile from './components/UserProfile'; 
+import MovieSchedule from './components/MovieSchedule';
+
 import './App.css'; 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/report" element={<ReportPage />} />
           <Route path="/review" element={<MovieReview />} />
+          <Route path="/schedule" element={<MovieSchedule />} />
         </Routes>
       </div>
     </Router>
