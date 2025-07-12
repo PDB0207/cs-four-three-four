@@ -7,6 +7,13 @@ const MovieReview = () => {
   const [comment, setComment] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
+  //  Thêm state cho các input
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [movieName, setMovieName] = useState('');
+  const [showTime, setShowTime] = useState('');
+
   const handleSuggestionClick = (text) => {
     if (!suggestions.includes(text)) {
       setSuggestions([...suggestions, text]);
@@ -15,10 +22,35 @@ const MovieReview = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  // Gửi dữ liệu về backend
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Gửi đánh giá:', { rating, comment, suggestions });
-    alert('Cảm ơn bạn đã đánh giá!');
+
+    const reviewData = {
+      fullName,
+      email,
+      phone,
+      movieName,
+      showTime,
+      rating,
+      comment,
+      suggestions,
+    };
+
+    try {
+      const res = await fetch('http://localhost:5000/api/reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(reviewData)
+      });
+
+      const data = await res.json();
+      alert(data.message || 'Gửi đánh giá thành công!');
+      console.log('Gửi thành công:', reviewData);
+    } catch (err) {
+      console.error('Lỗi gửi đánh giá:', err);
+      alert('Không gửi được đánh giá. Hãy thử lại.');
+    }
   };
 
   return (
@@ -26,11 +58,41 @@ const MovieReview = () => {
       <h2>Đánh giá phim</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-grid">
-          <input type="text" placeholder="Họ tên" />
-          <input type="text" placeholder="Email" />
-          <input type="text" placeholder="Số điện thoại" />
-          <input type="text" placeholder="Tên phim" />
-          <input type="text" placeholder="Suất chiếu" />
+          <input
+            type="text"
+            placeholder="Họ tên"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Số điện thoại"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Tên phim"
+            value={movieName}
+            onChange={(e) => setMovieName(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Suất chiếu"
+            value={showTime}
+            onChange={(e) => setShowTime(e.target.value)}
+            required
+          />
         </div>
 
         <div className="rating">
