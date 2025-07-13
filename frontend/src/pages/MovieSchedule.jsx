@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../pages/MovieSchedule.css';
-
-
+import './MovieSchedule.css'; // ✅ đúng path
 
 export default function MovieSchedule() {
   const [dates, setDates] = useState([]);
@@ -15,6 +13,20 @@ export default function MovieSchedule() {
       .then((res) => res.json())
       .then((data) => setDates(data));
   }, []);
+
+  useEffect(() => {
+  let url = "http://localhost:5000/api/schedule/movies";
+  if (cinema) {
+    url += `?cinema=${cinema}`;
+  }
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("📦 Movies nhận được:", data);  // 👈 THÊM DÒNG NÀY
+      setMovies(data);
+    });
+}, [cinema]);
+
 
   useEffect(() => {
     let url = "http://localhost:5000/api/schedule/movies";
